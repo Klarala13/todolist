@@ -9,7 +9,7 @@
 
 <script>
 
-import uuid from "uuid";
+//import uuid from "uuid";
 export default {
   name: "AddTodo",
   data(){
@@ -22,7 +22,7 @@ export default {
       e.preventDefault();
       //Stop default sending of form to a file, and then add the new Todo
       const newTodo = {
-        id: uuid.v4(),
+        //id: uuid.v4(),
         title: this.title,
         completed: false
       }
