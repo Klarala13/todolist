@@ -24,10 +24,12 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
   .todo-item{
     background: #f6f6f6;
     padding: 10px;
     border-bottom: 1px #ccc dotted;
+    font-family: 'Indie Flower', cursive;
   }
   .is-complete{
     text-decoration: line-through;
