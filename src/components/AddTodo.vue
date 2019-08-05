@@ -40,8 +40,10 @@ export default {
   input[type="text"] {
     flex: 10;
     padding: 5px;
+    height: 40px;
   }
   input[type="submit"] {
     flex: 2;
+    height: 40px;
   }
 </style>
