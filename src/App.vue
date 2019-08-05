@@ -31,11 +31,11 @@ export default {
     },
     addTodo(newTodo) {
       const { title, completed } = newTodo;
-      axios.post("https://jsonplaceholder.typicode.com/todos, {
+      axios.post("https://jsonplaceholder.typicode.com/todos", {
         title, 
         completed
       })
-      .then(res => this.todos = [...this.todos, newTodo])
+      .then(res => this.todos = [...this.todos, res.data])
       .catch(err => console.error(err));
       
     }
