@@ -30,12 +30,19 @@ export default {
       this.todos = this.todos.filter(todo => todo.id !== id);
     },
     addTodo(newTodo) {
-      this.todos = [...this.todos, newTodo];
+      const { title, completed } = newTodo;
+      axios.post("https://jsonplaceholder.typicode.com/todos, {
+        title, 
+        completed
+      })
+      .then(res => this.todos = [...this.todos, newTodo])
+      .catch(err => console.error(err));
+      
     }
   },
   created(){
     //Axios is an Http library to make get post req.
-    axios.get("https://jsonplaceholder.typicode.com/todos")
+    axios.get("https://jsonplaceholder.typicode.com/todos?_limit=7")
     .then(res => this.todos = res.data)   
     .cath(err => console.error(err)); 
   }
