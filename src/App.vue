@@ -10,6 +10,9 @@
 import Header from "./components/layout/Header";
 import Todos from "./components/Todos";
 import AddTodo from "./components/AddTodo";
+
+import axios from "axios";
+
 export default {
   name: 'app',
   components: {
@@ -19,23 +22,7 @@ export default {
   },
   data(){
     return{
-      todos:[
-        {
-          id: 1, 
-          title: "ToDo One",
-          completed: false
-        },
-        {
-          id: 2, 
-          title: "ToDo Two",
-          completed: false
-        },
-        {
-          id: 3, 
-          title: "ToDo Three",
-          completed: false
-        }
-      ]
+      todos:[]
     }
   },
   methods:{
@@ -45,6 +32,12 @@ export default {
     addTodo(newTodo) {
       this.todos = [...this.todos, newTodo];
     }
+  },
+  created(){
+    //Axios is an Http library to make get post req.
+    axios.get("https://jsonplaceholder.typicode.com/todos")
+    .then(res => this.todos = res.data)   
+    .cath(err => console.error(err)); 
   }
 }
 </script>
