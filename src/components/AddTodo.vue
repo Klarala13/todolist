@@ -28,6 +28,7 @@ export default {
       }
       //send to parent element
       this.$emit("add-todo", newTodo);
+      this.title = "";
     }
   }
 }
@@ -41,9 +42,11 @@ export default {
     flex: 10;
     padding: 5px;
     height: 40px;
+    font-size: 18px;
   }
   input[type="submit"] {
     flex: 2;
     height: 40px;
+    font-size: 18px;
   }
 </style>
